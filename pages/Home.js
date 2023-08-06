@@ -1,9 +1,17 @@
-import { Button, Text, View } from 'react-native';
-import Nav from '../components/Nav';
+import { Button, Text, View, StyleSheet } from 'react-native';
 
+const styles = StyleSheet.create({
+    buttons: {
+        flexDirection: 'row',
+        gap: 8,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 16,
+    },
+});
 export const HomeScreen = ({ navigation }) => {
     return (
-        <View>
+        <View style={styles.buttons}>
             <Button
                 title="Go to Seraj's profile"
                 onPress={() =>
@@ -14,8 +22,6 @@ export const HomeScreen = ({ navigation }) => {
                 title="Go to Add Goal"
                 onPress={() => navigation.navigate('Goal', { name: 'Goal' })}
             />
-            {/* <Nav /> */}
-            <Text>Saddam Atef Helles</Text>
         </View>
     );
 };
